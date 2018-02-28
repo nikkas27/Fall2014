@@ -88,27 +88,27 @@ for i in Uni:
 
     Accuracy_Score_rf=accuracy_score(Estimated, predictions_rf)
     print("Accuracy Score of Random Forest for {0}:".format(i.upper()),(Accuracy_Score_rf)*100,"%")
-    if (i == 'Arizona State University'):
-        ################################# Using Gaussian Niive Bayes ########################################
-        ######################################################################################################
-        print("Gaussian Naiive Bayes:\n")
-        model = GaussianNB()
-        X_train, X_test, y_train, y_test = cross_validation.train_test_split(Train_IndepentVars, Train_TargetVars, test_size=0.2)
+    
+    ################################# Using Gaussian Niive Bayes ########################################
+    ######################################################################################################
+    print("Gaussian Naiive Bayes:\n")
+    model = GaussianNB()
+    X_train, X_test, y_train, y_test = cross_validation.train_test_split(Train_IndepentVars, Train_TargetVars, test_size=0.2)
 
-        ##################################### Train the classifier: #########################################
-        #print(X_train,y_train)
-        #model.fit(x, y)
-        #model.fit(x,y)
-        model.fit(X_train,y_train)
+    ##################################### Train the classifier: #########################################
+    #print(X_train,y_train)
+    #model.fit(x, y)
+    #model.fit(x,y)
+    model.fit(X_train,y_train)
 
-        ########################################### Test: ###################################################
+    ########################################### Test: ###################################################
 
-        predicted_gnb= model.predict(Test_TargetVar)
-        print ("Gaussian Naiive Bayes Prediction for {0}:\n".format(i.upper()),predicted_gnb)
-        print("Estimated Output:\n",Estimated)
+    predicted_gnb= model.predict(Test_TargetVar)
+    print ("Gaussian Naiive Bayes Prediction for {0}:\n".format(i.upper()),predicted_gnb)
+    print("Estimated Output:\n",Estimated)
 
-        Accuracy_Score_gnb=accuracy_score(Estimated, predicted_gnb)
-        print("Accuracy Score of Gaussian Naiive Bayes for {0}:".format(i.upper()),(Accuracy_Score_gnb)*100,"%")
+    Accuracy_Score_gnb=accuracy_score(Estimated, predicted_gnb)
+    print("Accuracy Score of Gaussian Naiive Bayes for {0}:".format(i.upper()),(Accuracy_Score_gnb)*100,"%")
 
     if (i == 'Arizona State University'):
         break
