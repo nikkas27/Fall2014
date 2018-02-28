@@ -32,5 +32,5 @@ for i in Uni:
     x=binary.loc[binary['UniversityApplied'] == i]
     # print("Completed {0}".format(i))
     x.to_excel('{0}.xlsx'.format(i))
-    #print("File Created")'''
+    print("File Created")'''
 
